@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A cinematic digital home for Prasad Devarakonda and Prasad Tech in Telugu."
+    />
+    <title>Prasad Tech in Telugu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tiro+Telugu:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#story">Skip to story</a>
+    <a class="shop-cta" href="/shop.html">Shop Gadgets</a>
+
+    <main id="story">
+      <section class="scrub-hero" id="scrubHero" aria-labelledby="heroTitle">
+        <div class="scrub-hero__stage">
+          <video
+            id="heroVideo"
+            class="scrub-hero__video"
+            muted
+            playsinline
+            preload="auto"
+            poster="/assets/prasad-current.jpg"
+            aria-label="Cinematic video of Prasad Devarakonda"
+          >
+            <source src="/assets/cinematic_edit.mp4" type="video/mp4" />
+          </video>
+          <div class="scrub-hero__grade" aria-hidden="true"></div>
+          <div class="hero-caption hero-caption--one">
+            <span>Prasad Devarakonda</span>
+          </div>
+          <div class="hero-caption hero-caption--two">
+            <h1 id="heroTitle">Prasad Tech in Telugu</h1>
+          </div>
+          <div class="hero-caption hero-caption--three">
+            <p>10 years<br />of making technology simple.</p>
+          </div>
+          <div class="hero-caption hero-caption--four" aria-label="Community achievements">
+            <strong>5M+ community</strong>
+            <strong>2B+ views</strong>
+          </div>
+          <div class="scrub-hero__hint" aria-hidden="true">
+            <span>Scroll controls the camera</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="ecosystem-film" id="ecosystemFilm" aria-labelledby="ecosystemTitle">
+        <div class="ecosystem-film__stage">
+          <p class="micro-title">It started with one channel.</p>
+          <figure class="origin-logo">
+            <a
+              class="identity-link"
+              href="https://www.youtube.com/channel/UCb-xXZ7ltTvrh9C6DgB9H-Q"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Prasad Tech in Telugu channel on YouTube"
+            >
+              <img src="/assets/prasad-tech-logo.jpeg" alt="Official Prasad Tech in Telugu logo" />
+            </a>
+          </figure>
+          <svg class="ecosystem-lines" viewBox="0 0 100 100" aria-hidden="true" preserveAspectRatio="none">
+            <path class="line line--auto" d="M50 50 C36 42, 27 35, 19 30" />
+            <path class="line line--shorts" d="M50 50 C61 37, 68 28, 74 20" />
+            <path class="line line--gaming" d="M50 50 C66 52, 78 58, 86 66" />
+            <path class="line line--lifestyle" d="M50 50 C39 62, 29 70, 20 78" />
+          </svg>
+          <figure class="identity identity--auto">
+            <a
+              class="identity-link"
+              href="https://www.youtube.com/@prasadautomobile"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Prasad Auto Mobile channel on YouTube"
+            >
+              <img src="/assets/prasad-auto-logo.jpeg" alt="Official Prasad Auto Mobile logo" />
+              <figcaption>Prasad Auto Mobile</figcaption>
+            </a>
+          </figure>
+          <figure class="identity identity--shorts">
+            <a
+              class="identity-link"
+              href="https://www.youtube.com/@prasadtechreels"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Prasad Tech Shorts channel on YouTube"
+            >
+              <img src="/assets/prasad-mic.jpeg" alt="Prasad Tech Shorts identity asset" />
+              <figcaption>Prasad Tech Shorts</figcaption>
+            </a>
+          </figure>
+          <figure class="identity identity--gaming">
+            <a
+              class="identity-link"
+              href="https://www.youtube.com/@prasadthegamer"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Prasad The Gamer channel on YouTube"
+            >
+              <img src="/assets/prasad-gaming.jpeg" alt="Prasad gaming content" />
+              <figcaption>Prasad The Gamer</figcaption>
+            </a>
+          </figure>
+          <figure class="identity identity--lifestyle">
+            <a
+              class="identity-link"
+              href="https://www.youtube.com/@prasaddevarakonda"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Prasad Lifestyle channel on YouTube"
+            >
+              <img src="/assets/prasad-current.jpg" alt="Prasad Lifestyle identity asset" />
+              <figcaption>Prasad Lifestyle</figcaption>
+            </a>
+          </figure>
+          <div class="ecosystem-film__closing">
+            <h2 id="ecosystemTitle">One creator.<br />Many worlds.</h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="watch-film" id="mustWatchSection" aria-labelledby="watchTitle">
+        <div class="watch-film__copy">
+          <span>Must Watch</span>
+          <h2 id="watchTitle">Videos that define the journey.</h2>
+        </div>
+        <div class="video-belt" id="videoBelt" aria-label="Must Watch continuous video belt">
+          <div class="video-belt__viewport" id="videoBeltViewport">
+            <div class="video-belt__track" id="videoBeltTrack"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="legacy-3d" id="legacyJourney" aria-label="10-Year Interactive 3D Journey">
+        <div class="legacy-3d__viewport" id="legacyViewport">
+          <canvas class="legacy-3d__canvas" id="legacyCanvas" aria-hidden="true"></canvas>
+          <div class="legacy-3d__hud" id="legacyHud" aria-hidden="true">
+            <span class="legacy-3d__hud-tag">10-YEAR CHRONICLES</span>
+            <div class="legacy-3d__hud-row">
+              <span class="legacy-3d__hud-year" id="hudYear">2016</span>
+              <span class="legacy-3d__hud-chapter" id="hudChapter">THE BEGINNING</span>
+            </div>
+            <div class="legacy-3d__hud-meter">
+              <div class="legacy-3d__hud-bar" id="hudBar"></div>
+            </div>
+          </div>
+          <div class="legacy-3d__camera" id="legacyCamera">
+            <div class="legacy-3d__world" id="legacyWorld"></div>
+          </div>
+          <div class="legacy-3d__fog-overlay" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="closing-film journey-finale" id="journeyFinale" aria-labelledby="closingTitle">
+        <div class="journey-finale__inner">
+          <div class="journey-finale__content">
+            <div class="journey-finale__brand">
+              <img src="/assets/prasad-tech-logo.jpeg" alt="Prasad Tech in Telugu" class="journey-finale__logo" />
+              <span class="journey-finale__brand-tag">PRASAD TECH IN TELUGU</span>
+            </div>
+
+            <h2 class="journey-finale__title" id="closingTitle">THE JOURNEY CONTINUES.</h2>
+
+            <p class="journey-finale__desc">
+              “Ten years of making technology simple for Telugu people. The journey continues, and the next chapter is yet to be written.”
+            </p>
+
+            <div class="journey-finale__actions">
+              <a
+                href="https://www.youtube.com/channel/UCb-xXZ7ltTvrh9C6DgB9H-Q"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="journey-btn journey-btn--primary"
+              >
+                SUBSCRIBE ON YOUTUBE
+              </a>
+              <a
+                href="https://t.me/iamprasadtech"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="journey-btn journey-btn--secondary"
+              >
+                JOIN TELEGRAM COMMUNITY
+              </a>
+              <a
+                href="#legacyJourney"
+                class="journey-btn journey-btn--outline"
+                id="btnExploreJourney"
+              >
+                EXPLORE THE JOURNEY
+              </a>
+            </div>
+
+            <div class="journey-finale__stats">
+              <div class="journey-stat">
+                <span class="journey-stat__num">5.16M+</span>
+                <span class="journey-stat__label">Subscribers</span>
+              </div>
+              <div class="journey-stat">
+                <span class="journey-stat__num">5,400+</span>
+                <span class="journey-stat__label">Videos Made</span>
+              </div>
+              <div class="journey-stat">
+                <span class="journey-stat__num">2.23B+</span>
+                <span class="journey-stat__label">Total Views</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="journey-finale__media">
+            <div class="journey-finale__portrait-card">
+              <div class="journey-finale__portrait-frame">
+                <img
+                  src="/assets/prasad-current.png"
+                  alt="Prasad Devarakonda seated beside his dog with mobile phones on the table"
+                  class="journey-finale__portrait-img"
+                />
+                <div class="journey-finale__portrait-shade" aria-hidden="true"></div>
+                <div class="journey-finale__portrait-caption">
+                  <strong class="journey-finale__caption-name">Prasad Devarakonda</strong>
+                  <span class="journey-finale__caption-role">Founder · Prasad Tech in Telugu</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
