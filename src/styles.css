@@ -106,6 +106,37 @@ a {
   filter: saturate(0.92) contrast(1.08) brightness(0.82);
   transform: translateZ(0) scale(calc(1.02 + (var(--hero-progress, 0) * 0.025)));
   backface-visibility: hidden;
+  z-index: 1;
+}
+
+.scrub-hero__poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear;
+  will-change: opacity;
+}
+
+.scrub-hero__poster.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear 700ms;
+}
+
+.scrub-hero__poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% center;
+  filter: saturate(0.92) contrast(1.08) brightness(0.82);
+  transform: translateZ(0) scale(calc(1.02 + (var(--hero-progress, 0) * 0.025)));
+  backface-visibility: hidden;
+  display: block;
 }
 
 .scrub-hero__grade {
@@ -115,6 +146,7 @@ a {
     linear-gradient(90deg, rgba(3, 4, 4, 0.72), rgba(3, 4, 4, 0.12) 42%, rgba(3, 4, 4, 0.45)),
     linear-gradient(0deg, rgba(3, 4, 4, 0.82), transparent 35%, rgba(3, 4, 4, 0.28));
   pointer-events: none;
+  z-index: 3;
 }
 
 .hero-caption {
@@ -126,6 +158,7 @@ a {
   opacity: 0;
   transform: translateY(1rem);
   transition: opacity 420ms ease, transform 420ms ease;
+  z-index: 4;
 }
 
 .hero-caption span,
@@ -190,26 +223,6 @@ a {
   bottom: clamp(3.4rem, 6vh, 4.4rem);
   opacity: clamp(0, calc((var(--hero-progress, 0) - 0.72) * 8), 1);
   transform: translateY(calc((1 - clamp(0, calc((var(--hero-progress, 0) - 0.72) * 8), 1)) * 0.8rem));
-}
-
-.scrub-hero__hint {
-  position: absolute;
-  left: clamp(1.2rem, 5vw, 5rem);
-  bottom: 1.4rem;
-  color: rgba(244, 239, 228, 0.58);
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  opacity: calc(1 - min(1, var(--hero-progress, 0) * 4));
-}
-
-.scrub-hero__hint::after {
-  content: "";
-}
-
-.scrub-hero.is-buffering .scrub-hero__hint::after {
-  content: " / buffering";
-  color: rgba(214, 179, 107, 0.8);
 }
 
 .ecosystem-film {

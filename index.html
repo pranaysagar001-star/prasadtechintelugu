@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tiro+Telugu:ital@0;1&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="/assets/hero-poster.png" fetchpriority="high" />
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
@@ -29,11 +30,14 @@
             muted
             playsinline
             preload="auto"
-            poster="/assets/prasad-current.jpg"
+            poster="/assets/hero-poster.png"
             aria-label="Cinematic video of Prasad Devarakonda"
           >
             <source src="/assets/cinematic_edit.mp4" type="video/mp4" />
           </video>
+          <div class="scrub-hero__poster" id="heroPoster" aria-hidden="true">
+            <img src="/assets/hero-poster.png" alt="" fetchpriority="high" decoding="sync" />
+          </div>
           <div class="scrub-hero__grade" aria-hidden="true"></div>
           <div class="hero-caption hero-caption--one">
             <span>Prasad Devarakonda</span>
@@ -47,9 +51,6 @@
           <div class="hero-caption hero-caption--four" aria-label="Community achievements">
             <strong>5M+ community</strong>
             <strong>2B+ views</strong>
-          </div>
-          <div class="scrub-hero__hint" aria-hidden="true">
-            <span>Scroll controls the camera</span>
           </div>
         </div>
       </section>

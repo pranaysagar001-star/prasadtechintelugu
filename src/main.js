@@ -172,8 +172,22 @@ function initHeroScrub() {
     }
   };
 
+  const poster = document.querySelector("#heroPoster");
+  let isPosterHidden = false;
+
+  const revealVideo = () => {
+    if (isPosterHidden || !poster) return;
+    isPosterHidden = true;
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        poster.classList.add("is-hidden");
+      });
+    });
+  };
+
   video.addEventListener("seeked", () => {
     isSeeking = false;
+    revealVideo();
     if (pendingSeekTime !== null) {
       const next = pendingSeekTime;
       pendingSeekTime = null;
@@ -190,11 +204,18 @@ function initHeroScrub() {
     updateTargetFromScroll();
     smoothedProgress = targetProgress;
     performSeek(smoothedProgress * getMaxVideoTime());
+    revealVideo();
   });
 
   video.addEventListener("waiting", () => section.classList.add("is-buffering"));
-  video.addEventListener("canplay", () => section.classList.remove("is-buffering"));
-  video.addEventListener("canplaythrough", () => section.classList.remove("is-buffering"));
+  video.addEventListener("canplay", () => {
+    section.classList.remove("is-buffering");
+    revealVideo();
+  });
+  video.addEventListener("canplaythrough", () => {
+    section.classList.remove("is-buffering");
+    revealVideo();
+  });
 
   // Main animation frame loop for smooth, responsive seeking
   const renderLoop = () => {
@@ -238,6 +259,9 @@ function initHeroScrub() {
 
   if (video.readyState >= 1) {
     syncDuration();
+  }
+  if (video.readyState >= 2) {
+    revealVideo();
   }
 
   if (!reducedMotion) {
